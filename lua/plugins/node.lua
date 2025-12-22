@@ -1,7 +1,7 @@
 return {
   -- Better package.json support
   {
-    "vvt/package-info.nvim",
+    "vuki656/package-info.nvim",
     dependencies = { "MunifTanjim/nui.nvim" },
     event = { "BufRead package.json" },
     config = function()
