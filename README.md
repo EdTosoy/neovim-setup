@@ -45,7 +45,30 @@ nvim
 *Plugins will automatically install on the first launch. Restart Neovim once the installation completes.*
 
 
+### 3. Post-Installation Check
+Run `:checkhealth` to ensure everything is set up correctly.
+- **Node/Python/Ruby/Perl providers**: It's okay if some are missing unless you specifically need them.
+- **Parser/Grammar errors**: Run `:TSUpdate` to fix them.
+
 ---
+
+## ❓ Troubleshooting
+
+### My icons are squares/weird characters!
+This means your terminal is not using a **Nerd Font**.
+1. Download a font like [DejavuSansMono](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/DejaVuSansMono.zip) or [JetBrainsMono](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/JetBrainsMono.zip).
+2. Install the font on your OS.
+3. **Configure your terminal emulator** to use that font.
+
+### I see errors about "gcc" or "make" when installing Telescope/fzf
+You are missing build tools.
+- **Linux**: Install `base-devel` (Arch) or `build-essential` (Debian/Ubuntu).
+- **Windows**: Install `MinGW` or use `choco install make mingw`.
+
+### Copilot / AI features?
+This config is AI-ready but doesn't force a specific provider. 
+- To add Copilot: Run `:Lazy`, install `github/copilot`, and set it up.
+
 
 ## ⌨️ Essential Shortcuts
 The **Leader Key** is `Space`.
