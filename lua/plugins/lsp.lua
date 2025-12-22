@@ -5,6 +5,7 @@ return {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
       "hrsh7th/cmp-nvim-lsp",
+      "SmiteshP/nvim-navic",
     },
     config = function()
       require("mason").setup()
@@ -33,6 +34,7 @@ return {
 
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       local lspconfig = require("lspconfig")
+      local navic = require("nvim-navic")
 
       local servers = {
         lua_ls = {
@@ -63,6 +65,13 @@ return {
 
       for server, config in pairs(servers) do
         config.capabilities = capabilities
+        -- Attach navic for breadcrumbs
+        config.on_attach = function(client, bufnr)
+          if client.server_capabilities.documentSymbolProvider then
+            navic.attach(client, bufnr)
+          end
+        end
+
         -- Neovim 0.11 way
         if vim.lsp.config then
           vim.lsp.config(server, {
