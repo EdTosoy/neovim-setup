@@ -10,18 +10,26 @@ return {
     opts = {
       filesystem = {
         filtered_items = {
-          visible = true, -- This makes hidden files visible by default
+          visible = true,
           show_hidden_count = true,
           hide_dotfiles = false,
           hide_gitignored = false,
-          hide_by_name = {
-            -- ".DS_Store",
-            -- "thumbs.db"
-          },
-          never_show = {
-            -- ".DS_Store",
-            -- "thumbs.db"
-          },
+        },
+      },
+      default_component_configs = {
+        indent = {
+          with_expanders = true, -- if nil and file nesting is enabled, will enable expanders
+          expander_collapsed = "",
+          expander_expanded = "",
+          expander_highlight = "NeoTreeExpander",
+        },
+        icon = {
+          folder_closed = "",
+          folder_open = "",
+          folder_empty = "󰜌",
+          -- The next two settings are safely used if you use nvim-web-devicons
+          default = "*",
+          highlight = "NeoTreeFileIcon"
         },
       },
     },

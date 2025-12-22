@@ -29,6 +29,16 @@ return {
     end,
   },
 
+  -- Icons (Material/Nerd Font)
+  {
+    "nvim-tree/nvim-web-devicons",
+    lazy = false,
+    opts = {
+      default = true,
+      strict = true,
+    },
+  },
+
   -- Statusline
   {
     "nvim-lualine/lualine.nvim",
