@@ -32,9 +32,12 @@ return {
         },
       })
 
-      -- Mason tools (non-LSP)
+      -- Mason tools (LSPs + Formatters + Debuggers)
       local registry = require("mason-registry")
-      local tools = { "actionlint", "sql-formatter", "prettier", "stylua" }
+      local tools = { 
+        "actionlint", "sql-formatter", "prettier", "stylua", 
+        "delve", "codelldb", "js-debug-adapter" 
+      }
       for _, tool in ipairs(tools) do
         local p = registry.get_package(tool)
         if not p:is_installed() then
@@ -121,6 +124,7 @@ return {
           vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
           vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
           vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+          -- Move code action to a better shortcut if needed, but <leader>ca is standard
           vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
           vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
         end,
