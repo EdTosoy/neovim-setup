@@ -59,7 +59,16 @@ return {
 
       for server, config in pairs(servers) do
         config.capabilities = capabilities
-        lspconfig[server].setup(config)
+        -- Neovim 0.11 way
+        if vim.lsp.config then
+          vim.lsp.config(server, {
+            config = config,
+          })
+          vim.lsp.enable(server)
+        else
+          -- Legacy nvim-lspconfig way
+          lspconfig[server].setup(config)
+        end
       end
 
       -- Keymaps for LSP
