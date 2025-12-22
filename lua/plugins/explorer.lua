@@ -29,7 +29,6 @@ return {
           folder_closed = "",
           folder_open = "",
           folder_empty = "󰜌",
-          -- The next two settings are safely used if you use nvim-web-devicons
           default = "*",
           highlight = "NeoTreeFileIcon"
         },
