@@ -19,7 +19,10 @@ require("lazy").setup({
     lazy = false,
     version = false,
   },
-  checker = { enabled = true },
+  checker = { 
+    enabled = true,
+    notify = false, -- Stop the annoying "Plugin Updates" notifications on startup
+  },
   performance = {
     rtp = {
       disabled_plugins = {
