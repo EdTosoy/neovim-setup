@@ -46,9 +46,9 @@ return {
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
           { name = "luasnip" },
+          { name = "path", option = { trailing_slash = true } }, -- Path Intellisense parity
         }, {
           { name = "buffer" },
-          { name = "path" },
         }),
       })
     end,

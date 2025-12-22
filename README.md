@@ -1,14 +1,14 @@
-# 🚀 Premium Fullstack & Platform Engineering Neovim Setup
+# �� Premium Fullstack & Platform Engineering Neovim Setup
 
-A modern, high-performance Neovim configuration designed for the transition from **Fullstack Development (Next.js/Angular/TS/PostgreSQL)** to **Platform Engineering (Go/Rust/DevOps/GCP)**.
+A modern, high-performance Neovim configuration designed for the transition from **Fullstack Development (Nest.js/Angular/TS/PostgreSQL)** to **Platform Engineering (Go/Rust/DevOps/GCP)**.
 
 ## ✨ Features
 - **⚡ Performance**: Powered by `Lazy.nvim` for sub-50ms startup.
 - **🛠️ Roadmap Ready**: Built-in support for TypeScript, Go, Rust, Terraform, Helm, and Docker.
 - **💾 Backend & DB**: Deep integration for **NestJS**, **PostgreSQL (sqls)**, and **Prisma**.
-- **💻 Workflow**: Integrated floating terminal and `.env` support.
-- **🎨 Aesthetics**: `GitHub Dark Default` theme (Antigravity Style) with a professional dashboard.
-- **🧠 UX Boost**: Interactive breadcrumbs, sticky scroll context, and mnemonic shortcuts with `Which-key`.
+- **💻 Workflow**: Integrated floating terminal, `.env` support, and **Project Manager**.
+- **🎨 Aesthetics**: `One Dark Pro Night Flat` theme (Antigravity Style) with Material Icons.
+- **🧠 UX Boost**: **Error Lens** (inline diagnostics), breadcrumbs, and sticky scroll.
 
 ---
 
@@ -23,16 +23,11 @@ A modern, high-performance Neovim configuration designed for the transition from
 | **Windows** | `choco install neovim git ripgrep fd nodejs golang rust terraform` |
 
 ### 2. Clone the Repository
-Clone this into your Neovim configuration directory depending on your OS:
+Clone this into your Neovim configuration directory:
 
 **Linux / macOS:**
 ```bash
 git clone git@github.com:EdTosoy/neovim-setup.git ~/.config/nvim
-```
-
-**Windows (PowerShell):**
-```powershell
-git clone git@github.com:EdTosoy/neovim-setup.git $HOME\AppData\Local\nvim
 ```
 
 ---
@@ -42,21 +37,19 @@ The **Leader Key** is `Space`.
 
 | Action | Shortcut |
 | :--- | :--- |
+| **Switch Project** | `Space + fp` |
 | **Toggle Explorer** | `Space + e` |
 | **Find Files** | `Space + ff` |
 | **Live Grep** | `Space + fg` |
 | **Toggle Terminal** | `Ctrl + \\ ` |
-| **Go to Definition** | `gd` |
-| **Contextual Info** | `K` |
 | **Manual Format** | `Space + f` |
 
 ---
 
 ## 🛡️ Future-Proofing & Maintenance
-- **Update Plugins**: Run `:Lazy update`.
-- **LSP Management**: Run `:Mason` to add new tools.
-- **Sticky Context**: As you scroll, the current function scope stays at the top.
-- **Breadcrumbs**: See your current path (`Project > File > Symbol`) at the top of the buffer.
+- **Diagnostics**: Error Lens is active; errors appear directly at the end of the line.
+- **LSP & Linting**: GitHub Actions (`actionlint`) and Docker support are managed via `:Mason`.
+- **Project Flow**: Use `Space + fp` to instantly switch between different Git repositories.
 
 ---
 Built for the long-term. 🚀

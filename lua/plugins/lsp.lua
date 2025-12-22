@@ -28,13 +28,42 @@ return {
           "cssls",
           "tailwindcss",
           "jsonls",
-          "sqls"
+          "sqls",
         },
       })
+
+      -- Mason tools (non-LSP)
+      local registry = require("mason-registry")
+      local tools = { "actionlint", "sql-formatter", "prettier", "stylua" }
+      for _, tool in ipairs(tools) do
+        local p = registry.get_package(tool)
+        if not p:is_installed() then
+          p:install()
+        end
+      end
 
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       local lspconfig = require("lspconfig")
       local navic = require("nvim-navic")
+
+      -- "Error Lens" Style Diagnostics
+      vim.diagnostic.config({
+        virtual_text = {
+          prefix = "●",
+          source = "if_many",
+        },
+        update_in_insert = true,
+        underline = true,
+        severity_sort = true,
+        float = {
+          focused = false,
+          style = "minimal",
+          border = "rounded",
+          source = "always",
+          header = "",
+          prefix = "",
+        },
+      })
 
       local servers = {
         lua_ls = {
@@ -65,21 +94,18 @@ return {
 
       for server, config in pairs(servers) do
         config.capabilities = capabilities
-        -- Attach navic for breadcrumbs
         config.on_attach = function(client, bufnr)
           if client.server_capabilities.documentSymbolProvider then
             navic.attach(client, bufnr)
           end
         end
 
-        -- Neovim 0.11 way
         if vim.lsp.config then
           vim.lsp.config(server, {
             config = config,
           })
           vim.lsp.enable(server)
         else
-          -- Legacy nvim-lspconfig way
           lspconfig[server].setup(config)
         end
       end
