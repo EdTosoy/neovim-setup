@@ -6,9 +6,9 @@ A modern, high-performance Neovim configuration designed for the transition from
 - **⚡ Performance**: Powered by `Lazy.nvim` for sub-50ms startup.
 - **🛠️ Roadmap Ready**: Built-in support for TypeScript, Go, Rust, Terraform, Helm, and Docker.
 - **💾 Backend & DB**: Deep integration for **NestJS**, **PostgreSQL (sqls)**, and **Prisma**.
-- **💻 Workflow**: Integrated floating terminal for **pnpm/npm** scripts and `.env` support.
-- **🎨 Aesthetics**: `Catppuccin Mocha` theme with a professional dashboard.
-- **🧠 UX Boost**: Interactive shortcut discovery with `Which-key`.
+- **💻 Workflow**: Integrated floating terminal and `.env` support.
+- **🎨 Aesthetics**: `GitHub Dark Default` theme (Antigravity Style) with a professional dashboard.
+- **🧠 UX Boost**: Interactive breadcrumbs, sticky scroll context, and mnemonic shortcuts with `Which-key`.
 
 ---
 
@@ -47,19 +47,16 @@ The **Leader Key** is `Space`.
 | **Live Grep** | `Space + fg` |
 | **Toggle Terminal** | `Ctrl + \\ ` |
 | **Go to Definition** | `gd` |
-| **Hover Docs** | `K` |
+| **Contextual Info** | `K` |
 | **Manual Format** | `Space + f` |
-
-> [!TIP]
-> **Don't memorize everything!** Just press `Space` and wait—**Which-key** will show you available commands in a popup.
 
 ---
 
 ## 🛡️ Future-Proofing & Maintenance
 - **Update Plugins**: Run `:Lazy update`.
 - **LSP Management**: Run `:Mason` to add new tools.
-- **Environment**: Use `.env` files naturally; they are supported out-of-the-box.
-- **Scripts**: Toggle the terminal (`Ctrl + \\`) to run `pnpm dev` or other CLI tools instantly.
+- **Sticky Context**: As you scroll, the current function scope stays at the top.
+- **Breadcrumbs**: See your current path (`Project > File > Symbol`) at the top of the buffer.
 
 ---
 Built for the long-term. 🚀
