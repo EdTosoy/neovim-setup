@@ -1,0 +1,10 @@
+# Neovim cache and state
+.repro/
+undo/
+shada/
+swap/
+*.swp
+
+# Lazy.nvim plugins (these are managed by lazy.lua)
+/lazy-lock.json
+/lazy/
