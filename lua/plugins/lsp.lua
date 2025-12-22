@@ -26,6 +26,8 @@ return {
           "html",
           "cssls",
           "tailwindcss",
+          "jsonls",
+          "sqls"
         },
       })
 
@@ -55,6 +57,8 @@ return {
         html = {},
         cssls = {},
         tailwindcss = {},
+        jsonls = {},
+        sqls = {},
       }
 
       for server, config in pairs(servers) do

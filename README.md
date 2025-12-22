@@ -1,10 +1,11 @@
 # 🚀 Premium Fullstack & Platform Engineering Neovim Setup
 
-A modern, high-performance Neovim configuration designed for the transition from **Fullstack Development (Next.js/Angular/TS)** to **Platform Engineering (Go/Rust/DevOps/GCP)**.
+A modern, high-performance Neovim configuration designed for the transition from **Fullstack Development (Nest.js/Angular/TS/PostgreSQL)** to **Platform Engineering (Go/Rust/DevOps/GCP)**.
 
 ## ✨ Features
 - **⚡ Performance**: Powered by `Lazy.nvim` for sub-50ms startup.
 - **🛠️ Roadmap Ready**: Built-in support for TypeScript, Go, Rust, Terraform, Helm, and Docker.
+- **💾 Backend & DB**: Deep integration for **NestJS**, **PostgreSQL (sqls)**, and **Prisma**.
 - **🎨 Aesthetics**: `Catppuccin Mocha` theme with a professional dashboard.
 - **🧠 UX Boost**: Mnemonic shortcuts with `Which-key`, auto-formatting on save, and Git status in the gutter.
 
@@ -16,7 +17,7 @@ A modern, high-performance Neovim configuration designed for the transition from
 
 | OS | Command (Recommended) |
 | :--- | :--- |
-| **Linux (Arch)** | `sudo pacman -S neovim git ripgrep fd unzip nodejs go rustup terraform` |
+| **Linux (Arch)** | `sudo pacman -S neovim git ripgrep fd unzip nodejs go rustup terraform postgresql-libs` |
 | **macOS** | `brew install nvim git ripgrep fd nodejs go rust terraform` |
 | **Windows** | `choco install neovim git ripgrep fd nodejs golang rust terraform` |
 
@@ -52,9 +53,7 @@ The **Leader Key** is `Space`.
 - `K`: Hover Documentation
 - `Shift + l/h`: Switch Buffers (Tabs)
 - `Space + ca`: Code Actions
-
-> [!TIP]
-> **Don't memorize everything!** Just press `Space` and wait—**Which-key** will show you available commands in a popup.
+- `Space + f`: Manual Format (Auto-format on save is enabled)
 
 ---
 
@@ -62,7 +61,7 @@ The **Leader Key** is `Space`.
 
 - **Update Plugins**: Run `:Lazy update` inside Neovim.
 - **Check Health**: Run `:checkhealth` to find and fix system dependency issues.
-- **LSP Management**: Run `:Mason` to view or add new Language Servers.
+- **LSP Management**: Run `:Mason` to view or add new Language Servers (e.g., `sqls`, `prismals`).
 - **Roadmap Shift**: Modular config in `lua/plugins/` makes it easy to swap one tech for another as your career evolves.
 
 ---

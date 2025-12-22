@@ -1,16 +1,15 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    version = false, -- Use the latest or pin it
+    version = false,
     build = ":TSUpdate",
     config = function()
-      local configs = require("nvim-treesitter.config")
-      configs.setup({
+      require("nvim-treesitter.config").setup({
         ensure_installed = { 
           "lua", "python", "javascript", "typescript", "tsx", 
           "go", "gomod", "gowork", "gosum",
           "rust", "hcl", "terraform", "proto", "toml", "sql",
-          "html", "css", "json", "yaml", "dockerfile", "bash", "markdown" 
+          "html", "css", "json", "jsonc", "yaml", "dockerfile", "bash", "markdown", "prisma" 
         },
         highlight = { enabled = true },
         indent = { enabled = true },
