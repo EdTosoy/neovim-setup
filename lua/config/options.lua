@@ -27,3 +27,6 @@ opt.clipboard = "unnamedplus"
 opt.undofile = true
 opt.updatetime = 250
 opt.timeoutlen = 300
+opt.foldmethod = "expr"
+opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+opt.foldlevel = 99 -- Open all folds by default

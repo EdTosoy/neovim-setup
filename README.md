@@ -16,18 +16,34 @@ A modern, high-performance Neovim configuration designed for the transition from
 ## 📥 Cross-Platform Installation
 
 ### 1. Install Prerequisites
+Ensure you have **Neovim v0.10+** (v0.11 recommended) installed.
 
-| OS | Command (Recommended) |
+| OS | Requirements |
 | :--- | :--- |
-| **Linux (Arch)** | `sudo pacman -S neovim git ripgrep fd unzip nodejs go rustup terraform postgresql-libs delve gdb` |
-| **macOS** | `brew install nvim git ripgrep fd nodejs go rust terraform delve codelldb` |
-| **Windows** | `choco install neovim git ripgrep fd nodejs golang rust terraform delve` |
+| **Linux (Arch)** | `sudo pacman -S neovim git ripgrep fd unzip nodejs npm go rustup terraform postgresql-libs base-devel` |
+| **Linux (Debian/Ubuntu)** | `sudo apt install neovim git ripgrep fd-find unzip nodejs npm golang rustc cargo terraform libpq-dev build-essential` |
+| **macOS** | `brew install nvim git ripgrep fd nodejs go rust terraform` |
+| **Windows** | `choco install neovim git ripgrep fd nodejs golang rust terraform` |
 
-### 2. Clone the Repository
-Clone this into your Neovim configuration directory:
+> [!IMPORTANT]
+> **Nerd Fonts**: You **MUST** install a [Nerd Font](https://www.nerdfonts.com/font-downloads) (e.g., `MesloLGS NF` or `JetBrainsMono NF`) and set it as your terminal font for icons to appear correctly.
+
+### 2. Install the Configuration
+Back up your existing configuration if you have one, then clone this repo:
+
 ```bash
-git clone git@github.com:EdTosoy/neovim-setup.git ~/.config/nvim
+# Backup
+mv ~/.config/nvim ~/.config/nvim.bak
+mv ~/.local/share/nvim ~/.local/share/nvim.bak
+
+# Install
+git clone https://github.com/EdTosoy/neovim-setup.git ~/.config/nvim
+
+# Start Neovim
+nvim
 ```
+*Plugins will automatically install on the first launch. Restart Neovim once the installation completes.*
+
 
 ---
 

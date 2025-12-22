@@ -43,7 +43,7 @@ return {
 
       -- Adapters configuration
       
-      -- TypeScript / JavaScript
+      -- TypeScript / JavaScript (unchanged)
       if not dap.adapters["pwa-node"] then
         dap.adapters["pwa-node"] = {
           type = "server",
@@ -55,6 +55,22 @@ return {
               vim.fn.stdpath("data") .. "/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js",
               "${port}",
             },
+          },
+        }
+      end
+
+      -- Rust / C / C++ (codelldb)
+      if not dap.adapters["codelldb"] then
+        local extension_path = vim.fn.stdpath("data") .. "/mason/packages/codelldb/extension/"
+        local codelldb_path = extension_path .. "adapter/codelldb"
+        local liblldb_path = extension_path .. "lldb/lib/liblldb.so" -- may vary by OS
+
+        dap.adapters.codelldb = {
+          type = "server",
+          port = "${port}",
+          executable = {
+            command = codelldb_path,
+            args = { "--port", "${port}" },
           },
         }
       end
@@ -79,6 +95,21 @@ return {
           }
         end
       end
+
+      -- Rust configuration
+      dap.configurations.rust = {
+        {
+          name = "Launch file",
+          type = "codelldb",
+          request = "launch",
+          program = function()
+            return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/target/debug/", "file")
+          end,
+          cwd = "${workspaceFolder}",
+          stopOnEntry = false,
+        },
+      }
     end,
   },
 }
+
