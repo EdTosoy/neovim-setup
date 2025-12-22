@@ -7,10 +7,16 @@ return {
       "hrsh7th/cmp-path",
       "L3MON4D3/LuaSnip",
       "saadparwaiz1/cmp_luasnip",
+      "rafamadriz/friendly-snippets", -- Massive snippet collection
+      "onsails/lspkind.nvim",         -- Icons in completion menu
     },
     config = function()
       local cmp = require("cmp")
       local luasnip = require("luasnip")
+      local lspkind = require("lspkind")
+
+      -- Load VS Code style snippets from friendly-snippets
+      require("luasnip.loaders.from_vscode").lazy_load()
 
       cmp.setup({
         snippet = {
@@ -43,10 +49,17 @@ return {
             end
           end, { "i", "s" }),
         }),
+        formatting = {
+          format = lspkind.cmp_format({
+            mode = "symbol_text", -- Show icons and text
+            maxwidth = 50,
+            ellipsis_char = "...",
+          }),
+        },
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
           { name = "luasnip" },
-          { name = "path", option = { trailing_slash = true } }, -- Path Intellisense parity
+          { name = "path", option = { trailing_slash = true } },
         }, {
           { name = "buffer" },
         }),
