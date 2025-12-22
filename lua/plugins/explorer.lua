@@ -9,6 +9,8 @@ return {
     },
     opts = {
       filesystem = {
+        hijack_netrw_behavior = "open_default", -- hijack netrw and open neo-tree
+        use_libuv_file_watcher = true,          -- This will use the OS level file watchers to detect changes
         filtered_items = {
           visible = true,
           show_hidden_count = true,
