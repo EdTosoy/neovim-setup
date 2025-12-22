@@ -6,9 +6,9 @@ A modern, high-performance Neovim configuration designed for the transition from
 - **⚡ Performance**: Powered by `Lazy.nvim` for sub-50ms startup.
 - **🛠️ Roadmap Ready**: Built-in support for TypeScript, Go, Rust, Terraform, Helm, and Docker.
 - **💾 Backend & DB**: Deep integration for **NestJS**, **PostgreSQL (sqls)**, and **Prisma**.
-- **🐞 Debugging**: Full **DAP** support for Go, Rust, and TypeScript with a premium UI.
-- **💻 Workflow**: Integrated floating terminal, `.env` support, and **Project Manager**.
-- **🎨 Aesthetics**: `One Dark Pro Night Flat` theme (Antigravity Style) with Material Icons.
+- **🌿 Git Mastery**: **Git Graph** (visual lanes), **Diffview** (history exploration), and **Inline Blame** (Git Lens style).
+- **�� Debugging**: Full **DAP** support for Go, Rust, and TypeScript with a premium UI.
+- **🎨 Aesthetics**: `One Dark Pro Night Flat` theme (Antigravity Style) with Material Icons and **Rainbow Brackets**.
 - **🧠 UX Boost**: **Error Lens** (inline diagnostics), breadcrumbs, and sticky scroll.
 
 ---
@@ -34,13 +34,13 @@ git clone git@github.com:EdTosoy/neovim-setup.git ~/.config/nvim
 ## ⌨️ Essential Shortcuts
 The **Leader Key** is `Space`.
 
-### 🔍 Explorer & Search
+### 🌿 Git Tools
 | Action | Shortcut |
 | :--- | :--- |
-| **Switch Project** | `Space + fp` |
-| **Toggle Explorer** | `Space + e` |
-| **Find Files** | `Space + ff` |
-| **Live Grep** | `Space + fg` |
+| **Git Graph** | `Space + gl` |
+| **File History** | `Space + gh` |
+| **Diff View** | `Space + gd` |
+| **Inline Blame** | (Automatic on hover/cursor) |
 
 ### 🐞 Debugging (DAP)
 | Action | Shortcut |
@@ -49,14 +49,13 @@ The **Leader Key** is `Space`.
 | **Step Over** | `F10` |
 | **Step Into** | `F11` |
 | **Toggle Breakpoint** | `Space + b` |
-| **Toggle Debug UI** | `Space + du` |
 
----
-
-## 🛡️ Future-Proofing & Maintenance
-- **Update Plugins**: Run `:Lazy update`.
-- **LSP & Debuggers**: Managed via `:Mason`.
-- **Project Flow**: Use `Space + fp` to instantly switch between projects.
+### 🔍 Explorer & Search
+| Action | Shortcut |
+| :--- | :--- |
+| **Switch Project** | `Space + fp` |
+| **Toggle Explorer** | `Space + e` |
+| **Find Files** | `Space + ff` |
 
 ---
 Built for the long-term. 🚀
