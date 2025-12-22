@@ -1,20 +1,31 @@
 return {
-  -- GitHub Theme (Antigravity Style)
+  -- One Dark Pro Theme (Matches your Antigravity setup)
   {
-    "projekt0n/github-nvim-theme",
-    lazy = false, -- Load on startup
-    priority = 1000,
+    "olimorris/onedarkpro.nvim",
+    priority = 1000, -- Ensure it loads first
     config = function()
-      require("github-theme").setup({
+      require("onedarkpro").setup({
         options = {
-          transparent = true,
-          styles = {
-            sidebars = "transparent",
-            floats = "transparent",
-          },
+          transparency = true,
+          cursorline = true,
+        },
+        styles = {
+          types = "NONE",
+          methods = "NONE",
+          numbers = "NONE",
+          strings = "NONE",
+          comments = "italic",
+          keywords = "bold,italic",
+          constants = "NONE",
+          functions = "italic",
+          operators = "NONE",
+          variables = "NONE",
+          parameters = "NONE",
+          conditionals = "italic",
+          virtual_texts = "NONE",
         },
       })
-      vim.cmd("colorscheme github_dark_default")
+      vim.cmd("colorscheme onedark")
     end,
   },
 
@@ -23,7 +34,7 @@ return {
     "nvim-lualine/lualine.nvim",
     opts = {
       options = {
-        theme = "auto", -- Automatically matches theme
+        theme = "auto", -- Automatically matches One Dark Pro
         component_separators = "|",
         section_separators = "",
       },
@@ -51,7 +62,7 @@ return {
     opts = {},
   },
 
-  -- Breadcrumbs (Barbecue)
+  -- Breadcrumbs
   {
     "utilyre/barbecue.nvim",
     name = "barbecue",
