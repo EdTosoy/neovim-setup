@@ -1,9 +1,11 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
+    version = false, -- Use the latest or pin it
     build = ":TSUpdate",
     config = function()
-      require("nvim-treesitter").setup({
+      local configs = require("nvim-treesitter.config")
+      configs.setup({
         ensure_installed = { 
           "lua", "python", "javascript", "typescript", "tsx", 
           "go", "gomod", "gowork", "gosum",
