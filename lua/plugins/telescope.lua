@@ -29,6 +29,8 @@ return {
       vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Find Buffers" })
       vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Help Tags" })
       vim.keymap.set("n", "<leader>fp", function() telescope.extensions.projects.projects({}) end, { desc = "Find Projects" })
+      vim.keymap.set("n", "<leader>fc", builtin.commands, { desc = "Command Palette" })
+      vim.keymap.set("n", "<leader>fs", builtin.lsp_document_symbols, { desc = "Go to Symbol" })
     end,
   },
 }

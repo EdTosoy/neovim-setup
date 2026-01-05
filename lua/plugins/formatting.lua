@@ -26,7 +26,7 @@ return {
       graphql = { "prettier" },
       lua = { "stylua" },
       python = { "isort", "black" },
-      go = { "goimports", "gofmt" },
+      go = { "gofumpt", "goimports", "gofmt" },
       rust = { "rustfmt" },
       terraform = { "terraform_fmt" },
       hcl = { "terraform_fmt" },
@@ -35,8 +35,9 @@ return {
       prisma = { "prettier" },
     },
     format_on_save = {
-      timeout_ms = 500,
+      timeout_ms = 1000,
       lsp_fallback = true,
     },
+    notify_on_error = true,
   },
 }

@@ -36,7 +36,7 @@ return {
       local registry = require("mason-registry")
       local tools = { 
         "actionlint", "sql-formatter", "prettier", "stylua", 
-        "delve", "codelldb", "js-debug-adapter" 
+        "goimports", "gofumpt", "delve", "codelldb", "js-debug-adapter" 
       }
       for _, tool in ipairs(tools) do
         local p = registry.get_package(tool)
