@@ -77,7 +77,13 @@ return {
           },
         },
         pyright = {},
-        gopls = {},
+        gopls = {
+          settings = {
+            gopls = {
+              gofumpt = true,
+            },
+          },
+        },
         vtsls = {},
         rust_analyzer = {},
         terraformls = {},
